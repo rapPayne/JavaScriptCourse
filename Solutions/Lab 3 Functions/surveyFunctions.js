@@ -45,58 +45,26 @@ function drawSummary() {
   clearCanvas();
 }
 
+function drawLine(startDay, endDay, level) {
+  ctx.beginPath();
+  ctx.strokeStyle = color[level];
+  ctx.moveTo(getXPointForDay(startDay),
+    getYPointForScore(raw_survey_results[startDay][level]));
+  ctx.lineTo(getXPointForDay(endDay),
+    getYPointForScore(raw_survey_results[endDay][level]));
+  ctx.stroke();
+  ctx.closePath();
+
+}
 function drawTrends() {
   document.getElementById("graphType").innerText = "Trends";
   console.log(raw_survey_results);
   clearCanvas();
-  //Excellent
-  //TODO: Start the Path
-  ctx.beginPath();
-  //TODO: Set the stroke style to the excellentColor
-  ctx.strokeStyle = color.excellent;
-  ctx.moveTo(getXPointForDay(0),
-    getYPointForScore(raw_survey_results[0].excellent));
-  ctx.lineTo(getXPointForDay(29),
-    getYPointForScore(raw_survey_results[29].excellent));
-  ctx.stroke();
-  //TODO: Close the Path
-  ctx.closePath();
-  //Good
-  ctx.beginPath();
-  ctx.strokeStyle = color.good;
-  ctx.moveTo(getXPointForDay(0),
-    getYPointForScore(raw_survey_results[0].good));
-  ctx.lineTo(getXPointForDay(29),
-    getYPointForScore(raw_survey_results[29].good));
-  ctx.stroke();
-  ctx.closePath();
-  //Okay
-  ctx.beginPath();
-  ctx.strokeStyle = color.okay;
-  ctx.moveTo(getXPointForDay(0),
-    getYPointForScore(raw_survey_results[0].okay));
-  ctx.lineTo(getXPointForDay(29),
-    getYPointForScore(raw_survey_results[29].okay));
-  ctx.stroke();
-  ctx.closePath();
-  //Poor
-  ctx.beginPath();
-  ctx.strokeStyle = color.poor;
-  ctx.moveTo(getXPointForDay(0),
-    getYPointForScore(raw_survey_results[0].poor));
-  ctx.lineTo(getXPointForDay(29),
-    getYPointForScore(raw_survey_results[29].poor));
-  ctx.stroke();
-  ctx.closePath();
-  //Terrible
-  ctx.beginPath();
-  ctx.strokeStyle = color.terrible;
-  ctx.moveTo(getXPointForDay(0),
-    getYPointForScore(raw_survey_results[0].terrible));
-  ctx.lineTo(getXPointForDay(29),
-    getYPointForScore(raw_survey_results[29].terrible));
-  ctx.stroke();
-  ctx.closePath();
+  drawLine(0, 29, "excellent");
+  drawLine(0, 29, "good");
+  drawLine(0, 29, "okay");
+  drawLine(0, 29, "poor");
+  drawLine(0, 29, "terrible");
 }
 
 function drawOverallScore() {
