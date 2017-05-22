@@ -1,0 +1,28 @@
+{
+  "name": "javascript_labs",
+  "version": "1.2.0",
+  "description": "Labs for the JavaScript course",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapPayne/JavaScriptCourse.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Training",
+    "Course"
+  ],
+  "author": "Rap Payne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rapPayne/JavaScriptCourse/issues"
+  },
+  "homepage": "https://github.com/rapPayne/JavaScriptCourse#readme"
+}
